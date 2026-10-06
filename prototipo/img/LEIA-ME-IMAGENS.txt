@@ -1,0 +1,36 @@
+IMAGENS DO SITE - Dr. Marcelo Kodja
+====================================
+
+O site foi desenhado para ficar bonito MESMO SEM FOTOS (usa arte vetorial de
+articulacao/ortopedia). Mas fica ainda melhor com fotos reais.
+
+Foto recomendada (a unica realmente necessaria):
+------------------------------------------------
+1) dr-marcelo.jpg  -> Retrato vertical do Dr. Marcelo (proporcao 4:5).
+   Boa iluminacao, fundo neutro (jaleco/consultorio funciona bem).
+   Aparece na secao "Sobre".
+
+Como usar no PROTOTIPO local:
+-----------------------------
+- Coloque o arquivo nesta pasta (Site/prototipo/img/).
+- Em index.html, procure por  class="mk-sobre__frame"  e troque por:
+
+  <div class="mk-sobre__frame has-img">
+    <img src="img/dr-marcelo.jpg" alt="Dr. Marcelo Kodja">
+  </div>
+
+Como usar na HOTMART:
+---------------------
+- Suba a foto na biblioteca de midia da Hotmart, copie a URL e use essa URL
+  no lugar de "img/dr-marcelo.jpg" (veja INSTRUCOES-HOTMART.md, secao 4).
+
+Fotos opcionais (deixam o site mais rico, se tiver):
+----------------------------------------------------
+- Foto do consultorio / fachada (pode virar fundo de uma secao futura).
+- Foto do medico atendendo / procedimento (uso institucional, sem expor paciente).
+
+Boas praticas:
+--------------
+- Prefira .webp quando possivel (mais leve = site mais rapido).
+- Nao use imagens com marca d'agua de banco de imagens.
+- Respeite a etica medica: sem "antes e depois", sem exposicao de pacientes.

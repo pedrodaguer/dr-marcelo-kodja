@@ -1,0 +1,1134 @@
+<!-- ============================================================
+     Dr. Marcelo Kodja - Ortopedia e Traumatologia
+     BLOCO UNICO para Hotmart Pages (Codigo Customizado / HTML).
+     Cole ESTE arquivo inteiro em UM unico elemento de "Codigo
+     Customizado (HTML)" ocupando a pagina. Tudo esta embutido:
+     fontes, CSS e JS, escopado sob #mk-site para nao conflitar
+     com o CSS base da Hotmart.
+     Gerado a partir do prototipo testado (paridade 1:1).
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Marcelo Kodja Daguer",
+    "medicalSpecialty": ["Orthopedic", "PhysicalTherapy"],
+    "description": "Ortopedista e traumatologista com mais de 24 anos de experiência, foco em patologias do joelho e tratamento da dor crônica com abordagem integrativa.",
+    "url": "https://marcelokodja.com.br/",
+    "telephone": "+55-47-99252-0256",
+    "email": "adm@marcelokodja.com.br",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/drmarcelokodja/",
+      "https://www.doctoralia.com.br/marcelo-kodja-daguer-2/ortopedista-traumatologista/balneario-camboriu"
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Carlos Drummond de Andrade, 789 - Praia Brava",
+        "addressLocality": "Balneário Camboriú",
+        "addressRegion": "SC",
+        "addressCountry": "BR"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Aracaju, 1382 - Santo Antônio",
+        "addressLocality": "Joinville",
+        "addressRegion": "SC",
+        "addressCountry": "BR"
+      }
+    ]
+  }
+  </script>
+
+<style>
+/* ============================================================
+   Dr. Marcelo Kodja - Ortopedia e Traumatologia
+   Conceito: "Estrutura & Movimento" (azul petroleo + titanio/aco)
+   Tudo escopado sob #mk-site para nao conflitar com a Hotmart.
+   ============================================================ */
+
+/* ---------- TOKENS ---------- */
+#mk-site {
+  /* Azuis (paleta oficial do site atual + tons derivados) */
+  --azul-abismo:    #071A2C;
+  --azul-profundo:  #0B2C54;
+  --azul-marca:     #034697;
+  --azul-medio:     #1E5FA8;
+  --azul-vivo:      #4AA3DB;
+
+  /* Titanio / aco (acento frio, remete a implante ortopedico) */
+  --titanio:        #9FB2C0;
+  --titanio-claro:  #D9E2EA;
+  --titanio-escuro: #6B7E8D;
+  --aco:            #C3CED7;
+
+  /* Neutros */
+  --gelo:           #F2F5F9;
+  --gelo-2:         #E7EEF4;
+  --branco:         #FFFFFF;
+  --grafite:        #14181C;
+  --cinza:          #566470;
+  --cinza-claro:    #8B98A3;
+
+  /* Sinal */
+  --wa:             #25D366;
+
+  /* Tipografia */
+  --f-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --f-body:    'Manrope', 'Segoe UI', system-ui, sans-serif;
+  --f-mono:    'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Ritmo */
+  --section-pad: clamp(72px, 9vw, 132px);
+  --container:   1240px;
+  --linha-metal: linear-gradient(90deg, transparent, var(--titanio-claro) 20%, var(--titanio) 50%, var(--titanio-claro) 80%, transparent);
+
+  font-family: var(--f-body);
+  color: var(--grafite);
+  background: var(--gelo);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- RESET ESCOPADO ---------- */
+#mk-site *, #mk-site *::before, #mk-site *::after { box-sizing: border-box; margin: 0; padding: 0; }
+#mk-site img { max-width: 100%; display: block; }
+#mk-site a { text-decoration: none; color: inherit; }
+#mk-site ul { list-style: none; }
+#mk-site button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+#mk-site p { text-wrap: pretty; }
+#mk-site h1, #mk-site h2, #mk-site h3 { text-wrap: balance; }
+
+/* ---------- UTIL ---------- */
+#mk-site .mk-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 72px);
+}
+#mk-site .mk-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--f-mono);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--azul-medio);
+}
+#mk-site .mk-eyebrow::before {
+  content: ''; width: 26px; height: 1px;
+  background: var(--titanio-escuro);
+}
+#mk-site .mk-eyebrow--light { color: var(--titanio); }
+#mk-site .mk-eyebrow--light::before { background: var(--titanio); }
+
+#mk-site .mk-metal-line { height: 1px; background: var(--linha-metal); border: 0; }
+
+/* Estados de revelacao: escondem SO quando o JS confirma suporte (.is-ready).
+   Se o JS falhar, o conteudo permanece visivel (a prova de falhas na Hotmart). */
+#mk-site.is-ready .reveal { opacity: 0; transform: translateY(34px); }
+#mk-site.is-ready .reveal-l { opacity: 0; transform: translateX(-34px); }
+#mk-site.is-ready .reveal-r { opacity: 0; transform: translateX(34px); }
+#mk-site.is-ready .reveal,
+#mk-site.is-ready .reveal-l,
+#mk-site.is-ready .reveal-r {
+  transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+#mk-site .reveal.in, #mk-site .reveal-l.in, #mk-site .reveal-r.in {
+  opacity: 1; transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  #mk-site.is-ready .reveal,
+  #mk-site.is-ready .reveal-l,
+  #mk-site.is-ready .reveal-r { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ---------- BOTOES ---------- */
+#mk-site .mk-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--f-body);
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 15px 26px;
+  border-radius: 4px;
+  transition: transform .25s ease, box-shadow .3s ease, background .3s ease, color .3s ease, border-color .3s ease;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+}
+#mk-site .mk-btn svg { width: 17px; height: 17px; transition: transform .3s ease; }
+#mk-site .mk-btn:hover svg { transform: translateX(4px); }
+
+#mk-site .mk-btn--primary {
+  background: linear-gradient(135deg, var(--azul-medio), var(--azul-marca));
+  color: #fff;
+  box-shadow: 0 12px 26px -12px rgba(3,70,151,.7);
+}
+#mk-site .mk-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(3,70,151,.85); }
+
+#mk-site .mk-btn--wa {
+  background: var(--wa); color: #fff;
+  box-shadow: 0 12px 26px -12px rgba(37,211,102,.65);
+}
+#mk-site .mk-btn--wa:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(37,211,102,.8); }
+
+#mk-site .mk-btn--ghost {
+  background: transparent; color: var(--azul-profundo);
+  border: 1px solid rgba(11,44,84,.25);
+}
+#mk-site .mk-btn--ghost:hover { border-color: var(--azul-marca); color: var(--azul-marca); background: rgba(3,70,151,.04); }
+
+#mk-site .mk-btn--ghost-light {
+  background: transparent; color: #fff;
+  border: 1px solid rgba(217,226,234,.3);
+}
+#mk-site .mk-btn--ghost-light:hover { border-color: var(--titanio); background: rgba(217,226,234,.08); }
+
+/* ---------- NAV ---------- */
+#mk-site .mk-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  padding: 22px 0;
+  transition: padding .4s ease, background .4s ease, box-shadow .4s ease;
+}
+#mk-site .mk-nav::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: rgba(7,26,44,.9);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  opacity: 0; transition: opacity .4s ease;
+  border-bottom: 1px solid rgba(159,178,192,.12);
+}
+#mk-site .mk-nav.scrolled { padding: 12px 0; }
+#mk-site .mk-nav.scrolled::before { opacity: 1; }
+#mk-site .mk-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+
+#mk-site .mk-brand { display: flex; align-items: center; gap: 12px; }
+#mk-site .mk-brand__mark { width: 38px; height: 38px; flex-shrink: 0; }
+#mk-site .mk-brand__txt { line-height: 1.1; }
+#mk-site .mk-brand__name {
+  display: block;
+  font-family: var(--f-display);
+  font-size: 18px; font-weight: 600; color: #fff; letter-spacing: .01em;
+}
+#mk-site .mk-brand__sub {
+  display: block; margin-top: 2px;
+  font-family: var(--f-mono);
+  font-size: 8.5px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--titanio);
+  white-space: nowrap;
+}
+
+#mk-site .mk-nav-links { display: flex; align-items: center; gap: clamp(16px, 2vw, 32px); }
+#mk-site .mk-nav-links a {
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,.72);
+  position: relative; transition: color .3s;
+}
+#mk-site .mk-nav-links a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px;
+  background: var(--titanio); transform: scaleX(0); transform-origin: left; transition: transform .3s ease;
+}
+#mk-site .mk-nav-links a:hover, #mk-site .mk-nav-links a.active { color: #fff; }
+#mk-site .mk-nav-links a:hover::after, #mk-site .mk-nav-links a.active::after { transform: scaleX(1); }
+
+#mk-site .mk-nav-right { display: flex; align-items: center; gap: 14px; }
+#mk-site .mk-nav-cta { padding: 11px 20px; font-size: 12px; }
+
+#mk-site .mk-burger { display: none; flex-direction: column; gap: 5px; padding: 8px; z-index: 1001; }
+#mk-site .mk-burger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: transform .3s ease, opacity .3s ease; }
+#mk-site .mk-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#mk-site .mk-burger.open span:nth-child(2) { opacity: 0; }
+#mk-site .mk-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+#mk-site .mk-drawer {
+  position: fixed; inset: 0; z-index: 1000;
+  background: linear-gradient(160deg, var(--azul-abismo), var(--azul-profundo));
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;
+  opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility .35s ease;
+}
+#mk-site .mk-drawer.open { opacity: 1; visibility: visible; }
+#mk-site .mk-drawer a { font-family: var(--f-display); font-size: 26px; color: rgba(255,255,255,.85); }
+#mk-site .mk-drawer a:hover { color: var(--titanio); }
+#mk-site .mk-drawer .mk-btn { margin-top: 12px; font-size: 14px; }
+
+/* ---------- HERO ---------- */
+#mk-site .mk-hero {
+  position: relative; min-height: 100svh;
+  display: flex; align-items: center;
+  background: radial-gradient(ellipse 90% 80% at 75% 30%, #0d3358 0%, transparent 60%),
+              linear-gradient(160deg, var(--azul-abismo) 0%, #061626 55%, var(--azul-abismo) 100%);
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+#mk-site .mk-hero__grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(159,178,192,.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(159,178,192,.05) 1px, transparent 1px);
+  background-size: 74px 74px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, #000 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, #000 40%, transparent 85%);
+}
+/* Motivo ortopedico (SVG articulacao) no fundo */
+#mk-site .mk-hero__motif {
+  position: absolute; right: -6%; top: 50%; transform: translateY(-50%);
+  width: min(60vw, 720px); height: auto; opacity: .5; pointer-events: none;
+  color: var(--titanio);
+}
+#mk-site .mk-hero__glow {
+  position: absolute; width: 520px; height: 520px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,163,219,.16), transparent 70%);
+  right: 4%; top: 24%; filter: blur(20px); pointer-events: none;
+}
+#mk-site .mk-hero-inner { position: relative; z-index: 3; max-width: 760px; }
+#mk-site .mk-hero .mk-eyebrow { margin-bottom: 26px; }
+#mk-site .mk-hero h1 {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(40px, 6.4vw, 82px);
+  line-height: 1.02;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 22px;
+}
+#mk-site .mk-hero h1 em { font-style: italic; color: var(--titanio-claro); }
+#mk-site .mk-hero h1 .mk-grad {
+  background: linear-gradient(100deg, var(--azul-vivo), var(--titanio-claro));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+#mk-site .mk-hero__lead {
+  font-size: clamp(16px, 1.4vw, 19px); font-weight: 400;
+  color: rgba(223,232,240,.72); line-height: 1.7; max-width: 560px; margin-bottom: 20px;
+}
+#mk-site .mk-hero__crm {
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em;
+  color: var(--titanio); margin-bottom: 36px;
+}
+#mk-site .mk-hero__crm span { color: rgba(159,178,192,.55); }
+#mk-site .mk-hero__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 46px; }
+
+#mk-site .mk-hero__stats { display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 54px); }
+#mk-site .mk-hero__stat { }
+#mk-site .mk-hero__stat b {
+  display: block; font-family: var(--f-display); font-weight: 500;
+  font-size: 40px; color: #fff; line-height: 1;
+}
+#mk-site .mk-hero__stat b .mk-u { color: var(--azul-vivo); font-size: 26px; }
+#mk-site .mk-hero__stat span {
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--titanio); margin-top: 8px; display: block;
+}
+
+#mk-site .mk-hero__scroll {
+  position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 3;
+  font-family: var(--f-mono); font-size: 9px; letter-spacing: .3em; text-transform: uppercase; color: rgba(159,178,192,.6);
+}
+#mk-site .mk-hero__scroll i { width: 1px; height: 44px; background: linear-gradient(var(--titanio), transparent); animation: mkScroll 2s ease-in-out infinite; }
+@keyframes mkScroll { 0%,100%{opacity:.3;transform:scaleY(.7)} 50%{opacity:1;transform:scaleY(1)} }
+
+/* ---------- TIRA DE CONFIANCA ---------- */
+#mk-site .mk-trust {
+  background: var(--azul-profundo);
+  border-top: 1px solid rgba(159,178,192,.14);
+  border-bottom: 1px solid rgba(159,178,192,.14);
+}
+#mk-site .mk-trust-inner {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+#mk-site .mk-trust__item {
+  padding: 26px 24px; text-align: center;
+  border-left: 1px solid rgba(159,178,192,.12);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+#mk-site .mk-trust__item:first-child { border-left: 0; }
+#mk-site .mk-trust__item svg { width: 26px; height: 26px; color: var(--titanio); }
+#mk-site .mk-trust__item b { font-family: var(--f-display); font-size: 17px; color: #fff; font-weight: 600; }
+#mk-site .mk-trust__item span { font-size: 12px; color: rgba(195,206,215,.7); line-height: 1.4; }
+
+/* ---------- SECAO GENERICA ---------- */
+#mk-site .mk-sec { padding: var(--section-pad) 0; position: relative; overflow: hidden; }
+#mk-site .mk-sec--light { background: var(--gelo); }
+#mk-site .mk-sec--white { background: var(--branco); }
+#mk-site .mk-sec--dark {
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, #0d3358 0%, transparent 60%), var(--azul-abismo);
+  color: #fff;
+}
+#mk-site .mk-sec__head { max-width: 680px; margin-bottom: 54px; }
+#mk-site .mk-sec__head.center { margin-left: auto; margin-right: auto; text-align: center; }
+#mk-site .mk-sec h2 {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: clamp(32px, 4.2vw, 54px); line-height: 1.08; letter-spacing: -0.01em;
+  margin: 16px 0 20px; color: var(--azul-abismo);
+}
+#mk-site .mk-sec--dark h2 { color: #fff; }
+#mk-site .mk-sec h2 em { font-style: italic; color: var(--azul-marca); }
+#mk-site .mk-sec--dark h2 em { color: var(--titanio-claro); }
+#mk-site .mk-sec__head p { font-size: 16px; line-height: 1.75; color: var(--cinza); }
+#mk-site .mk-sec--dark .mk-sec__head p { color: rgba(217,226,234,.7); }
+
+/* ---------- SOBRE ---------- */
+#mk-site .mk-sobre-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(36px, 6vw, 84px); align-items: center; }
+#mk-site .mk-sobre__figure { position: relative; }
+#mk-site .mk-sobre__frame {
+  position: relative; aspect-ratio: 4/5; border-radius: 6px; overflow: hidden;
+  background: linear-gradient(160deg, var(--azul-profundo), var(--azul-abismo));
+  box-shadow: 0 40px 70px -40px rgba(11,44,84,.55);
+}
+#mk-site .mk-sobre__frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+#mk-site .mk-sobre__frame::after { /* selo quando nao ha foto */
+  content: attr(data-ph); position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; color: rgba(217,226,234,.35);
+}
+#mk-site .mk-sobre__frame.has-img::after { display: none; }
+#mk-site .mk-sobre__badge {
+  position: absolute; right: -18px; bottom: 34px;
+  background: rgba(255,255,255,.92); backdrop-filter: blur(6px);
+  border: 1px solid var(--gelo-2); border-radius: 6px; padding: 16px 20px;
+  box-shadow: 0 24px 48px -22px rgba(11,44,84,.4); text-align: center;
+}
+#mk-site .mk-sobre__badge b { display: block; font-family: var(--f-display); font-size: 30px; color: var(--azul-marca); line-height: 1; }
+#mk-site .mk-sobre__badge span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--cinza); }
+#mk-site .mk-sobre__frame-deco { position: absolute; top: -16px; left: -16px; width: 90px; height: 90px; border-top: 1px solid var(--titanio); border-left: 1px solid var(--titanio); border-radius: 6px 0 0 0; opacity: .6; }
+
+#mk-site .mk-sobre__text p { font-size: 16px; line-height: 1.82; color: var(--cinza); margin-bottom: 16px; }
+#mk-site .mk-sobre__text p strong { color: var(--grafite); font-weight: 700; }
+#mk-site .mk-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gelo-2); border: 1px solid var(--gelo-2); border-radius: 6px; overflow: hidden; margin: 30px 0; }
+#mk-site .mk-stats__i { background: var(--branco); padding: 22px 16px; text-align: center; }
+#mk-site .mk-stats__i b { font-family: var(--f-display); font-size: 38px; font-weight: 500; color: var(--azul-marca); line-height: 1; }
+#mk-site .mk-stats__i b .mk-u { color: var(--titanio-escuro); font-size: 22px; }
+#mk-site .mk-stats__i span { display: block; margin-top: 8px; font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--cinza); }
+
+#mk-site .mk-accordion { border-top: 1px solid var(--gelo-2); margin-top: 8px; }
+#mk-site .mk-accordion__btn { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 16px 0; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--azul-profundo); }
+#mk-site .mk-accordion__btn i { width: 20px; height: 20px; border: 1px solid currentColor; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: transform .3s ease; flex-shrink: 0; font-style: normal; }
+#mk-site .mk-accordion__btn.open i { transform: rotate(45deg); }
+#mk-site .mk-accordion__panel { max-height: 0; overflow: hidden; transition: max-height .5s ease; }
+#mk-site .mk-accordion__panel.open { max-height: 520px; }
+#mk-site .mk-accordion__panel ul { padding: 4px 0 20px; }
+#mk-site .mk-accordion__panel li { position: relative; padding: 6px 0 6px 20px; font-size: 14px; color: var(--cinza); line-height: 1.6; }
+#mk-site .mk-accordion__panel li::before { content: ''; position: absolute; left: 0; top: 14px; width: 8px; height: 1px; background: var(--titanio-escuro); }
+
+/* ---------- ESPECIALIDADES (grid) ---------- */
+#mk-site .mk-esp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(159,178,192,.14); border: 1px solid rgba(159,178,192,.14); border-radius: 8px; overflow: hidden; }
+#mk-site .mk-esp {
+  background: var(--azul-abismo); padding: 32px 28px; position: relative; overflow: hidden;
+  transition: background .4s ease;
+}
+#mk-site .mk-esp::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--linha-metal); transform: scaleX(0); transform-origin: left; transition: transform .45s ease; }
+#mk-site .mk-esp:hover { background: #0e3053; }
+#mk-site .mk-esp:hover::after { transform: scaleX(1); }
+#mk-site .mk-esp__ico { width: 40px; height: 40px; color: var(--titanio); margin-bottom: 18px; transition: color .4s, transform .5s ease; }
+#mk-site .mk-esp:hover .mk-esp__ico { color: var(--azul-vivo); transform: translateY(-3px); }
+#mk-site .mk-esp h3 { font-family: var(--f-body); font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+#mk-site .mk-esp p { font-size: 13.5px; line-height: 1.65; color: rgba(217,226,234,.6); }
+
+/* ---------- ABORDAGEM (metodo) ---------- */
+#mk-site .mk-abord-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 90px); align-items: center; }
+#mk-site .mk-abord__visual { position: relative; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; }
+#mk-site .mk-abord__visual svg { width: 100%; height: 100%; }
+#mk-site .mk-steps { display: flex; flex-direction: column; gap: 4px; }
+#mk-site .mk-step { display: grid; grid-template-columns: auto 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--gelo-2); }
+#mk-site .mk-step:last-child { border-bottom: 1px solid var(--gelo-2); }
+#mk-site .mk-step__n { font-family: var(--f-mono); font-size: 13px; font-weight: 600; color: var(--titanio-escuro); padding-top: 4px; }
+#mk-site .mk-step h3 { font-family: var(--f-body); font-size: 18px; font-weight: 700; color: var(--azul-abismo); margin-bottom: 6px; }
+#mk-site .mk-step p { font-size: 14.5px; line-height: 1.7; color: var(--cinza); }
+
+/* ---------- TRATAMENTOS (cards numerados) ---------- */
+#mk-site .mk-proc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(159,178,192,.16); border: 1px solid rgba(159,178,192,.16); border-radius: 8px; overflow: hidden; }
+#mk-site .mk-proc { background: var(--branco); padding: 38px 30px; position: relative; transition: background .35s ease; }
+#mk-site .mk-proc:hover { background: var(--gelo); }
+#mk-site .mk-proc__n { font-family: var(--f-display); font-size: 46px; font-weight: 500; color: var(--gelo-2); line-height: 1; transition: color .35s; }
+#mk-site .mk-proc:hover .mk-proc__n { color: var(--azul-vivo); }
+#mk-site .mk-proc h3 { font-size: 15px; font-weight: 700; letter-spacing: .01em; color: var(--azul-abismo); margin: 16px 0 10px; }
+#mk-site .mk-proc p { font-size: 13.5px; line-height: 1.7; color: var(--cinza); }
+#mk-site .mk-proc__arrow { position: absolute; top: 34px; right: 30px; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--gelo-2); display: flex; align-items: center; justify-content: center; color: var(--azul-marca); opacity: 0; transform: translateX(-6px); transition: opacity .3s, transform .3s, border-color .3s; }
+#mk-site .mk-proc:hover .mk-proc__arrow { opacity: 1; transform: translateX(0); border-color: var(--azul-vivo); }
+#mk-site .mk-proc--cta { background: linear-gradient(135deg, var(--azul-marca), var(--azul-profundo)); color: #fff; grid-column: auto; display: flex; flex-direction: column; justify-content: center; }
+#mk-site .mk-proc--cta .mk-proc__n { color: rgba(217,226,234,.28); }
+#mk-site .mk-proc--cta h3 { color: #fff; }
+#mk-site .mk-proc--cta p { color: rgba(217,226,234,.75); margin-bottom: 18px; }
+#mk-site .mk-proc--cta a { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--titanio-claro); }
+#mk-site .mk-proc--cta a svg { width: 16px; height: 16px; }
+
+/* ---------- FAIXA CTA ---------- */
+#mk-site .mk-band {
+  background: linear-gradient(120deg, var(--azul-marca) 0%, var(--azul-profundo) 60%, var(--azul-abismo) 100%);
+  position: relative; overflow: hidden;
+}
+#mk-site .mk-band::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 60px 60px; }
+#mk-site .mk-band-inner { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; padding-top: clamp(48px, 6vw, 76px); padding-bottom: clamp(48px, 6vw, 76px); }
+#mk-site .mk-band h2 { font-family: var(--f-display); font-weight: 500; font-size: clamp(28px, 3.4vw, 44px); color: #fff; line-height: 1.12; }
+#mk-site .mk-band h2 em { font-style: italic; color: var(--titanio-claro); }
+#mk-site .mk-band p { color: rgba(217,226,234,.75); margin-top: 10px; font-size: 15px; max-width: 460px; }
+
+/* ---------- PROVA SOCIAL ---------- */
+#mk-site .mk-seals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+#mk-site .mk-seal { background: var(--branco); border: 1px solid var(--gelo-2); border-radius: 8px; padding: 26px 22px; text-align: center; transition: transform .3s ease, box-shadow .3s ease; }
+#mk-site .mk-seal:hover { transform: translateY(-4px); box-shadow: 0 24px 44px -28px rgba(11,44,84,.4); }
+#mk-site .mk-seal svg { width: 34px; height: 34px; color: var(--azul-marca); margin: 0 auto 14px; }
+#mk-site .mk-seal b { display: block; font-family: var(--f-display); font-size: 20px; color: var(--azul-abismo); margin-bottom: 4px; }
+#mk-site .mk-seal span { font-size: 12.5px; color: var(--cinza); line-height: 1.5; }
+
+#mk-site .mk-reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+#mk-site .mk-review { background: var(--branco); border: 1px solid var(--gelo-2); border-radius: 10px; padding: 30px; display: flex; flex-direction: column; gap: 16px; }
+#mk-site .mk-review__stars { color: #E7B32C; letter-spacing: 3px; font-size: 15px; }
+#mk-site .mk-review p { font-size: 15px; line-height: 1.7; color: var(--grafite); font-style: italic; flex: 1; }
+#mk-site .mk-review__by { display: flex; align-items: center; gap: 12px; }
+#mk-site .mk-review__av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul-medio), var(--azul-marca)); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--f-display); }
+#mk-site .mk-review__by b { font-size: 14px; color: var(--azul-abismo); }
+#mk-site .mk-review__by span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .08em; color: var(--cinza-claro); text-transform: uppercase; }
+#mk-site .mk-reviews-cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 36px; }
+
+/* ---------- CONTATO ---------- */
+#mk-site .mk-contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); }
+#mk-site .mk-contato__intro p { color: rgba(217,226,234,.72); font-size: 16px; line-height: 1.8; margin-bottom: 34px; max-width: 460px; }
+#mk-site .mk-unidade { padding: 22px 0; border-top: 1px solid rgba(159,178,192,.16); display: grid; grid-template-columns: auto 1fr; gap: 18px; }
+#mk-site .mk-unidade:last-of-type { border-bottom: 1px solid rgba(159,178,192,.16); }
+#mk-site .mk-unidade__pin { width: 40px; height: 40px; border-radius: 8px; background: rgba(159,178,192,.1); display: flex; align-items: center; justify-content: center; color: var(--titanio); }
+#mk-site .mk-unidade__pin svg { width: 20px; height: 20px; }
+#mk-site .mk-unidade h4 { font-family: var(--f-body); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--titanio); margin-bottom: 6px; }
+#mk-site .mk-unidade p { font-size: 14.5px; color: rgba(223,232,240,.82); line-height: 1.6; }
+#mk-site .mk-unidade a { color: rgba(223,232,240,.82); border-bottom: 1px solid rgba(159,178,192,.3); }
+#mk-site .mk-unidade a:hover { color: #fff; }
+
+#mk-site .mk-contact-card { background: rgba(255,255,255,.04); border: 1px solid rgba(159,178,192,.16); border-radius: 12px; padding: clamp(28px, 4vw, 42px); }
+#mk-site .mk-contact-card h3 { font-family: var(--f-display); font-size: 26px; color: #fff; margin-bottom: 8px; font-weight: 500; }
+#mk-site .mk-contact-card > p { color: rgba(217,226,234,.7); font-size: 14.5px; line-height: 1.7; margin-bottom: 24px; }
+#mk-site .mk-contact-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 26px; }
+#mk-site .mk-contact-list a, #mk-site .mk-contact-list span { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 8px; background: rgba(159,178,192,.07); font-size: 14.5px; color: rgba(223,232,240,.9); transition: background .3s ease; }
+#mk-site .mk-contact-list a:hover { background: rgba(159,178,192,.14); }
+#mk-site .mk-contact-list svg { width: 20px; height: 20px; color: var(--titanio); flex-shrink: 0; }
+#mk-site .mk-contact-card .mk-btn { width: 100%; justify-content: center; }
+#mk-site .mk-socials { display: flex; gap: 12px; margin-top: 18px; }
+#mk-site .mk-social { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform .25s ease; }
+#mk-site .mk-social:hover { transform: translateY(-3px); }
+#mk-site .mk-social svg { width: 22px; height: 22px; }
+#mk-site .mk-social--wa { background: var(--wa); } #mk-site .mk-social--wa svg { fill: #fff; }
+#mk-site .mk-social--ig { background: linear-gradient(135deg,#f09433,#e6683c 30%,#dc2743 55%,#bc1888); } #mk-site .mk-social--ig svg { stroke: #fff; }
+
+/* ---------- FOOTER ---------- */
+#mk-site .mk-footer { background: var(--azul-abismo); color: rgba(217,226,234,.7); padding: 58px 0 26px; border-top: 1px solid rgba(159,178,192,.12); }
+#mk-site .mk-footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+#mk-site .mk-footer__brand .mk-brand { margin-bottom: 16px; }
+#mk-site .mk-footer__brand p { font-size: 14px; line-height: 1.7; max-width: 320px; }
+#mk-site .mk-footer__crm { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--titanio); margin-top: 14px; }
+#mk-site .mk-footer h5 { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--titanio); margin-bottom: 16px; }
+#mk-site .mk-footer li { margin-bottom: 10px; }
+#mk-site .mk-footer li a, #mk-site .mk-footer__col p { font-size: 14px; color: rgba(217,226,234,.7); transition: color .3s; }
+#mk-site .mk-footer li a:hover { color: #fff; }
+#mk-site .mk-footer-bottom { border-top: 1px solid rgba(159,178,192,.12); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+#mk-site .mk-footer-bottom p { font-size: 12px; color: rgba(159,178,192,.55); }
+
+/* ---------- WHATSAPP FLUTUANTE ---------- */
+#mk-site .mk-wa-float { position: fixed; bottom: 26px; right: 26px; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: flex; align-items: center; justify-content: center; z-index: 800; box-shadow: 0 10px 30px -6px rgba(37,211,102,.5); transition: transform .3s ease; }
+#mk-site .mk-wa-float:hover { transform: scale(1.08) translateY(-2px); }
+#mk-site .mk-wa-float svg { width: 30px; height: 30px; fill: #fff; }
+#mk-site .mk-wa-float::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--wa); animation: mkPulse 2.4s ease-out infinite; }
+@keyframes mkPulse { 0%{transform:scale(1);opacity:.6} 100%{transform:scale(1.7);opacity:0} }
+
+/* ============================================================
+   RESPONSIVO  (cortes em 1024 + camada de tablet-retrato)
+   ============================================================ */
+@media (max-width: 1024px) {
+  #mk-site .mk-nav-links, #mk-site .mk-nav-right .mk-nav-cta { display: none; }
+  #mk-site .mk-burger { display: flex; }
+  #mk-site .mk-hero__scroll { display: none; }
+  #mk-site .mk-sobre-grid, #mk-site .mk-abord-grid, #mk-site .mk-contato-grid { grid-template-columns: 1fr; }
+  #mk-site .mk-esp-grid, #mk-site .mk-proc-grid { grid-template-columns: repeat(2, 1fr); }
+  #mk-site .mk-trust-inner { grid-template-columns: repeat(2, 1fr); }
+  #mk-site .mk-trust__item:nth-child(3) { border-left: 0; }
+  #mk-site .mk-seals { grid-template-columns: repeat(2, 1fr); }
+  #mk-site .mk-reviews { grid-template-columns: 1fr; }
+  #mk-site .mk-footer-top { grid-template-columns: 1fr 1fr; }
+  #mk-site .mk-hero__motif { opacity: .22; right: -18%; }
+  #mk-site .mk-sobre__figure { max-width: 460px; margin: 0 auto; }
+  #mk-site .mk-band-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* Tablet-retrato: reancorar e centralizar (evita heranca de desktop quebrada) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #mk-site .mk-abord__visual { max-width: 460px; margin: 0 auto; }
+  #mk-site .mk-sobre__badge { right: 10px; }
+}
+
+@media (max-width: 680px) {
+  #mk-site .mk-esp-grid, #mk-site .mk-proc-grid { grid-template-columns: 1fr; }
+  #mk-site .mk-seals { grid-template-columns: 1fr 1fr; }
+  #mk-site .mk-trust-inner { grid-template-columns: 1fr; }
+  #mk-site .mk-trust__item { border-left: 0; border-top: 1px solid rgba(159,178,192,.12); }
+  #mk-site .mk-trust__item:first-child { border-top: 0; }
+  #mk-site .mk-footer-top { grid-template-columns: 1fr; gap: 30px; }
+  #mk-site .mk-footer-bottom { flex-direction: column; }
+  #mk-site .mk-hero__cta .mk-btn { flex: 1 1 100%; justify-content: center; }
+  #mk-site .mk-band .mk-btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 460px) {
+  #mk-site .mk-seals { grid-template-columns: 1fr; }
+  #mk-site .mk-hero__stats { gap: 22px; }
+  #mk-site .mk-sobre__badge { right: 8px; bottom: 14px; padding: 12px 16px; }
+  #mk-site .mk-wa-float { bottom: 16px; right: 16px; }
+}
+
+/* Esconde o indicador de scroll quando a altura e curta (evita sobrepor os stats) */
+@media (max-height: 860px) {
+  #mk-site .mk-hero__scroll { display: none; }
+}
+
+</style>
+
+<div id="mk-site">
+
+  <!-- ================= NAV ================= -->
+  <header class="mk-nav">
+    <div class="mk-container mk-nav-inner">
+      <a href="#hero" class="mk-brand" aria-label="Dr. Marcelo Kodja, início">
+        <svg class="mk-brand__mark" viewBox="0 0 44 44" fill="none" stroke="currentColor" aria-hidden="true" style="color:var(--titanio)">
+          <path d="M22 3 39 12.5v19L22 41 5 31.5v-19L22 3Z" stroke-width="1.4" opacity=".55"/>
+          <path d="M16 15v14M16 22h8M28 15l-6 7 6 7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="22" cy="22" r="1.6" fill="var(--azul-vivo)" stroke="none"/>
+        </svg>
+        <span class="mk-brand__txt">
+          <span class="mk-brand__name">Dr. Marcelo Kodja</span>
+          <span class="mk-brand__sub">Ortopedia · Traumatologia</span>
+        </span>
+      </a>
+
+      <nav class="mk-nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#areas">Áreas</a>
+        <a href="#abordagem">Abordagem</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="mk-nav-right">
+        <!-- CTA: link rastreado atual da Hotmart -->
+        <a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener" class="mk-btn mk-btn--wa mk-nav-cta">
+          Agendar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="mk-burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= DRAWER MOBILE ================= -->
+  <div class="mk-drawer" aria-hidden="true">
+    <a href="#sobre">Sobre</a>
+    <a href="#areas">Áreas de atuação</a>
+    <a href="#abordagem">Abordagem</a>
+    <a href="#tratamentos">Tratamentos</a>
+    <a href="#contato">Contato</a>
+    <a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener" class="mk-btn mk-btn--wa">Agendar avaliação</a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="mk-hero" id="hero">
+    <div class="mk-hero__grid" aria-hidden="true"></div>
+    <div class="mk-hero__glow" aria-hidden="true"></div>
+
+    <!-- Motivo ortopedico: articulacao + arcos de movimento -->
+    <svg class="mk-hero__motif" viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">
+      <g opacity=".9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M140 40c-6 40-4 70 8 96 8 18 10 34 4 52" stroke-width="2.5"/>
+        <path d="M182 40c-4 42 0 72 12 98 10 22 12 40 6 60" stroke-width="2.5"/>
+        <path d="M150 250c-10 22-10 48 2 78 8 20 8 34 2 30M198 248c8 26 6 52-6 80-8 18-8 30-2 28" stroke-width="2.5"/>
+        <ellipse cx="172" cy="234" rx="46" ry="30" stroke-width="2.5"/>
+        <circle cx="172" cy="234" r="6" fill="var(--azul-vivo)" stroke="none"/>
+      </g>
+      <g opacity=".4" stroke-dasharray="2 9" stroke-width="1.6">
+        <circle cx="172" cy="234" r="86"/>
+        <circle cx="172" cy="234" r="120"/>
+        <circle cx="172" cy="234" r="154"/>
+      </g>
+      <path d="M172 148a86 86 0 0 1 74 42" opacity=".8" stroke-width="2" stroke-dasharray="1 8" stroke-linecap="round"/>
+    </svg>
+
+    <div class="mk-container mk-hero-inner">
+      <p class="mk-eyebrow mk-eyebrow--light reveal">Ortopedia · Traumatologia · Balneário Camboriú</p>
+      <h1 class="reveal">Tratar a sua dor,<br><span class="mk-grad">preservando o movimento</span>.</h1>
+      <p class="mk-hero__lead reveal">Ortopedia e traumatologia com abordagem integrativa. Há mais de 24 anos ajudando pacientes a recuperar qualidade de vida, priorizando tratamentos não cirúrgicos sempre que possível.</p>
+      <p class="mk-hero__crm reveal">CRM 7670-SC <span>·</span> RQE 2621</p>
+
+      <div class="mk-hero__cta reveal">
+        <a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener" class="mk-btn mk-btn--wa">
+          Agendar avaliação
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#tratamentos" class="mk-btn mk-btn--ghost-light">Conhecer tratamentos</a>
+      </div>
+
+      <div class="mk-hero__stats reveal">
+        <div class="mk-hero__stat"><b><span data-count="24">0</span><span class="mk-u">+</span></b><span>Anos de experiência</span></div>
+        <div class="mk-hero__stat"><b><span data-count="2">0</span></b><span>Unidades em SC</span></div>
+        <div class="mk-hero__stat"><b><span data-count="6">0</span><span class="mk-u">+</span></b><span>Áreas de atuação</span></div>
+      </div>
+    </div>
+
+    <div class="mk-hero__scroll" aria-hidden="true"><span>Role</span><i></i></div>
+  </section>
+
+  <!-- ================= TIRA DE CONFIANCA ================= -->
+  <section class="mk-trust">
+    <div class="mk-container mk-trust-inner">
+      <div class="mk-trust__item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+        <b>24+ anos</b><span>de experiência clínica</span>
+      </div>
+      <div class="mk-trust__item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></svg>
+        <b>Cirurgia do Joelho</b><span>Membro da Sociedade Brasileira</span>
+      </div>
+      <div class="mk-trust__item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M8 9h8M8 12h5"/><circle cx="17" cy="18" r="3"/></svg>
+        <b>RQE 2621</b><span>registro de especialista</span>
+      </div>
+      <div class="mk-trust__item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 20s-7-4.5-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.5-7 9-7 9Z"/></svg>
+        <b>Humanizado</b><span>cuidado integrativo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOBRE ================= -->
+  <section class="mk-sec mk-sec--light" id="sobre">
+    <div class="mk-container mk-sobre-grid">
+      <div class="mk-sobre__figure reveal-l">
+        <div class="mk-sobre__frame-deco" aria-hidden="true"></div>
+        <!-- SUBSTITUIR: troque o data-ph por uma foto real do Dr. Marcelo.
+             Adicione <img src="img/dr-marcelo.jpg" alt="Dr. Marcelo Kodja"> dentro
+             deste div e acrescente a classe "has-img" ao .mk-sobre__frame. -->
+        <div class="mk-sobre__frame" data-ph="[ Foto do Dr. Marcelo Kodja · retrato vertical 4:5 ]"></div>
+        <div class="mk-sobre__badge">
+          <b>24+</b><span>anos de experiência</span>
+        </div>
+      </div>
+
+      <div class="mk-sobre__text">
+        <p class="mk-eyebrow reveal">Sobre o médico</p>
+        <h2 class="reveal">Dr. Marcelo <em>Kodja Daguer</em></h2>
+        <p class="reveal">Ortopedista e traumatologista com mais de 24 anos de atuação em Balneário Camboriú, com <strong>foco em patologias do joelho</strong> e no tratamento da dor crônica.</p>
+        <p class="reveal">Membro da Sociedade Brasileira de Cirurgia do Joelho e da Sociedade Americana de Medicina, une a técnica cirúrgica a uma <strong>abordagem integrativa</strong>: avalia o paciente como um todo e prioriza tratamentos não cirúrgicos sempre que possível, recorrendo à cirurgia apenas quando é a melhor indicação.</p>
+        <p class="reveal">Utiliza procedimentos guiados por ultrassom, neuromodulação e medicina regenerativa para tratar dores no joelho, coluna e mãos, além de condições como artrose, tendinites e fibromialgia.</p>
+
+        <div class="mk-stats reveal">
+          <div class="mk-stats__i"><b><span data-count="24">0</span><span class="mk-u">+</span></b><span>Anos de experiência</span></div>
+          <div class="mk-stats__i"><b><span data-count="6">0</span><span class="mk-u">+</span></b><span>Áreas de atuação</span></div>
+          <div class="mk-stats__i"><b><span data-count="2">0</span></b><span>Unidades em SC</span></div>
+        </div>
+
+        <div class="mk-accordion reveal">
+          <button class="mk-accordion__btn" aria-expanded="false"><i>+</i>Formação &amp; Associações</button>
+          <div class="mk-accordion__panel">
+            <ul>
+              <li>Ortopedia e Traumatologia (CRM 7670-SC · RQE 2621)</li>
+              <li>Membro da Sociedade Brasileira de Cirurgia do Joelho</li>
+              <li>Membro da Sociedade Americana de Medicina</li>
+              <li>Mais de 24 anos com foco em cirurgia e patologias do joelho</li>
+              <li>Procedimentos guiados por ultrassom e medicina regenerativa</li>
+              <li>Atendimento particular (não atende convênios)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:26px">
+          <a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener" class="mk-btn mk-btn--primary">
+            Agendar avaliação
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AREAS DE ATUACAO ================= -->
+  <section class="mk-sec mk-sec--dark" id="areas">
+    <div class="mk-container">
+      <div class="mk-sec__head center">
+        <p class="mk-eyebrow mk-eyebrow--light reveal" style="justify-content:center">Áreas de atuação</p>
+        <h2 class="reveal">Onde eu posso <em>te ajudar</em></h2>
+        <p class="reveal">Do joelho à coluna, do trauma agudo à dor que não passa. Um olhar completo sobre a origem da dor e o caminho de recuperação.</p>
+      </div>
+
+      <div class="mk-esp-grid">
+        <article class="mk-esp reveal">
+          <svg class="mk-esp__ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 6c-1 8 0 13 3 17s4 8 2 12"/><path d="M23 6c-1 9 1 14 4 18"/><ellipse cx="19" cy="23" rx="9" ry="6"/><circle cx="19" cy="23" r="1.6" fill="currentColor" stroke="none"/></svg>
+          <h3>Joelho</h3>
+          <p>Lesões de menisco e ligamentos (LCA), artrose e dores articulares. Principal área de foco cirúrgico.</p>
+        </article>
+        <article class="mk-esp reveal">
+          <svg class="mk-esp__ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 6v28"/><path d="M14 10h12M13 16h14M13 22h14M14 28h12" stroke-linecap="round"/></svg>
+          <h3>Coluna</h3>
+          <p>Cervicalgia, lombalgia e hérnia de disco, com foco no alívio da dor e na recuperação da função.</p>
+        </article>
+        <article class="mk-esp reveal">
+          <svg class="mk-esp__ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22h6l3-9 5 16 3-11 2 4h9"/></svg>
+          <h3>Dor crônica</h3>
+          <p>Investigação e manejo integrativo de dores persistentes, com foco em devolver qualidade de vida.</p>
+        </article>
+        <article class="mk-esp reveal">
+          <svg class="mk-esp__ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="20" cy="12" r="5"/><path d="M9 32c0-6 5-10 11-10s11 4 11 10" stroke-linecap="round"/></svg>
+          <h3>Ombro</h3>
+          <p>Tendinites, bursites e dores do manguito rotador que limitam o movimento do dia a dia.</p>
+        </article>
+        <article class="mk-esp reveal">
+          <svg class="mk-esp__ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="20" cy="9" r="4"/><path d="M20 13v13M12 18l8 3 8-3M14 34l6-8 6 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Fibromialgia</h3>
+          <p>Abordagem integrativa para a dor difusa, com atenção ao paciente como um todo.</p>
+        </article>
+        <article class="mk-esp reveal">
+          <svg class="mk-esp__ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 33c-8-4-12-9-12-15a6 6 0 0 1 12-3 6 6 0 0 1 12 3c0 6-4 11-12 15Z"/><path d="M20 15v10M16 20h8"/></svg>
+          <h3>Medicina regenerativa</h3>
+          <p>Estímulo à reparação dos tecidos e procedimentos guiados por ultrassom, de forma minimamente invasiva.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABORDAGEM (metodo) ================= -->
+  <section class="mk-sec mk-sec--white" id="abordagem">
+    <div class="mk-container mk-abord-grid">
+      <div class="mk-abord__visual reveal-l" aria-hidden="true">
+        <svg viewBox="0 0 360 360" fill="none" stroke="currentColor">
+          <circle cx="180" cy="180" r="150" stroke="var(--gelo-2)" stroke-width="2"/>
+          <circle cx="180" cy="180" r="110" stroke="var(--gelo-2)" stroke-width="2" stroke-dasharray="3 8"/>
+          <path d="M180 30a150 150 0 0 1 130 75" stroke="var(--azul-marca)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M180 30a150 150 0 0 0-90 30" stroke="var(--azul-vivo)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 10"/>
+          <g stroke="var(--titanio-escuro)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M150 120c-4 24 0 40 10 54 8 12 10 24 4 40"/>
+            <path d="M212 120c-4 26 2 42 12 58"/>
+            <ellipse cx="184" cy="196" rx="40" ry="26"/>
+          </g>
+          <circle cx="184" cy="196" r="7" fill="var(--azul-vivo)" stroke="none"/>
+          <circle cx="310" cy="105" r="6" fill="var(--azul-marca)" stroke="none"/>
+        </svg>
+      </div>
+      <div>
+        <p class="mk-eyebrow reveal">Abordagem integrativa</p>
+        <h2 class="reveal" style="color:var(--azul-abismo)">Menos cirurgia,<br><em>mais estratégia</em></h2>
+        <p class="reveal" style="color:var(--cinza);font-size:16px;line-height:1.75;margin-bottom:14px">Cada caso começa com uma avaliação ampla. O objetivo é entender a origem real da dor e escolher o caminho menos invasivo que resolva o problema.</p>
+
+        <div class="mk-steps">
+          <div class="mk-step reveal"><span class="mk-step__n">01</span><div><h3>Avaliação integrativa</h3><p>Anamnese detalhada e exame físico, olhando o paciente como um todo, não apenas a queixa isolada.</p></div></div>
+          <div class="mk-step reveal"><span class="mk-step__n">02</span><div><h3>Diagnóstico preciso</h3><p>Exames de imagem e avaliação clínica para localizar a verdadeira origem da dor.</p></div></div>
+          <div class="mk-step reveal"><span class="mk-step__n">03</span><div><h3>Tratamento não cirúrgico</h3><p>Procedimentos guiados por ultrassom, neuromodulação e medicina regenerativa, priorizando o mínimo invasivo.</p></div></div>
+          <div class="mk-step reveal"><span class="mk-step__n">04</span><div><h3>Cirurgia quando necessária</h3><p>Quando é a melhor indicação, técnicas minimamente invasivas como a artroscopia de joelho.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRATAMENTOS ================= -->
+  <section class="mk-sec mk-sec--light" id="tratamentos">
+    <div class="mk-container">
+      <div class="mk-sec__head center">
+        <p class="mk-eyebrow reveal" style="justify-content:center">Tratamentos e procedimentos</p>
+        <h2 class="reveal">Recursos para <em>cada caso</em></h2>
+        <p class="reveal">Do consultório ao centro cirúrgico, com foco em recuperar a função e a qualidade de vida.</p>
+      </div>
+
+      <div class="mk-proc-grid">
+        <article class="mk-proc reveal"><div class="mk-proc__n">01</div><div class="mk-proc__arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Consulta ortopédica</h3><p>Avaliação completa de ortopedia e traumatologia, presencial ou por telemedicina.</p></article>
+        <article class="mk-proc reveal"><div class="mk-proc__n">02</div><div class="mk-proc__arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Infiltração &amp; viscosuplementação</h3><p>Infiltração de substâncias na articulação, guiada por ultrassom, para dor e artrose.</p></article>
+        <article class="mk-proc reveal"><div class="mk-proc__n">03</div><div class="mk-proc__arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Artroscopia de joelho</h3><p>Cirurgia minimamente invasiva para lesões de menisco e cartilagem.</p></article>
+        <article class="mk-proc reveal"><div class="mk-proc__n">04</div><div class="mk-proc__arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Reconstrução ligamentar (LCA)</h3><p>Reconstrução do ligamento cruzado e demais ligamentos do joelho.</p></article>
+        <article class="mk-proc reveal"><div class="mk-proc__n">05</div><div class="mk-proc__arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Neuromodulação</h3><p>Técnica para modular o sinal de dor em quadros crônicos e persistentes.</p></article>
+        <article class="mk-proc reveal"><div class="mk-proc__n">06</div><div class="mk-proc__arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Medicina regenerativa</h3><p>Procedimentos que estimulam a reparação natural dos tecidos.</p></article>
+        <article class="mk-proc reveal"><div class="mk-proc__n">07</div><div class="mk-proc__arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Dor crônica &amp; fibromialgia</h3><p>Manejo integrativo de dores persistentes e fibromialgia.</p></article>
+        <article class="mk-proc reveal"><div class="mk-proc__n">08</div><div class="mk-proc__arrow"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Telemedicina</h3><p>Consultas e acompanhamento a distância, com segurança e comodidade.</p></article>
+        <article class="mk-proc mk-proc--cta reveal">
+          <div class="mk-proc__n">+</div>
+          <h3>Outros procedimentos</h3>
+          <p>Cada caso é único. Fale comigo para saber o melhor tratamento para a sua dor.</p>
+          <a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener">Falar sobre o meu caso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAIXA CTA ================= -->
+  <section class="mk-band">
+    <div class="mk-container mk-band-inner">
+      <div class="reveal-l">
+        <h2>Pronto para cuidar da sua dor <em>com quem tem experiência</em>?</h2>
+        <p>Agende uma avaliação e descubra o caminho de tratamento mais adequado para o seu caso.</p>
+      </div>
+      <a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener" class="mk-btn mk-btn--wa reveal-r" style="font-size:15px;padding:18px 32px">
+        Agendar pelo WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= PROVA SOCIAL ================= -->
+  <section class="mk-sec mk-sec--light" id="depoimentos">
+    <div class="mk-container">
+      <div class="mk-sec__head center">
+        <p class="mk-eyebrow reveal" style="justify-content:center">Confiança e credibilidade</p>
+        <h2 class="reveal">Experiência que <em>tranquiliza</em></h2>
+      </div>
+
+      <div class="mk-seals">
+        <div class="mk-seal reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <b>24+ anos</b><span>de experiência clínica</span>
+        </div>
+        <div class="mk-seal reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></svg>
+          <b>Cirurgia do Joelho</b><span>Sociedade Brasileira</span>
+        </div>
+        <div class="mk-seal reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M8 9h8M8 12h5"/><circle cx="17" cy="18" r="3"/></svg>
+          <b>RQE 2621</b><span>especialista registrado</span>
+        </div>
+        <div class="mk-seal reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7-4.5-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.5-7 9-7 9Z"/></svg>
+          <b>Atendimento</b><span>humanizado e integrativo</span>
+        </div>
+      </div>
+
+      <!-- Depoimentos REAIS (avaliações públicas do Google, copiadas sem edição). Nunca use texto inventado. -->
+      <div class="mk-reviews">
+        <article class="mk-review reveal">
+          <div class="mk-review__stars" aria-label="5 estrelas">★★★★★</div>
+          <p>"Dr Marcelo além de ser paciente e solícito é extremamente competente. Cumpre com os horários, a clínica é aconchegante. Ele te ouve com calma, não é aqueles médicos que querem atendimento estilo fast-food que em 10min querem te expulsar da sala. Sempre disposto a dar o melhor tratamento antes de sugerir uma cirurgia. Profissional excelente!"</p>
+          <div class="mk-review__by"><span class="mk-review__av">J</span><span><b>Juliana Alves</b><br><span>Avaliação no Google</span></span></div>
+        </article>
+        <article class="mk-review reveal">
+          <div class="mk-review__stars" aria-label="5 estrelas">★★★★★</div>
+          <p>"O Dr. Kodja é um médico muito cuidadoso, atencioso e preocupado com a saúde e bem estar de nós que somos pacientes. Deixando-nos confiantes de um tratamento eficiente. Sou muito grata à ele e toda a equipe por tudo que nos fazem. Parabéns. Malicé"</p>
+          <div class="mk-review__by"><span class="mk-review__av">M</span><span><b>Malice Medeiros</b><br><span>Avaliação no Google</span></span></div>
+        </article>
+        <article class="mk-review reveal">
+          <div class="mk-review__stars" aria-label="5 estrelas">★★★★★</div>
+          <p>"Sempre fui muito bem atendida! A equipe é dedicada, competente e muito receptiva! Com certeza, representando com excelência o otimo trabalho do Dr. Marcelo que é  nota mil!!"</p>
+          <div class="mk-review__by"><span class="mk-review__av">M</span><span><b>Maria Teresa Sedrez</b><br><span>Avaliação no Google</span></span></div>
+        </article>
+      </div>
+
+      <div class="mk-reviews-cta reveal">
+        <a href="https://www.google.com/search?q=Dr.+Marcelo+Kodja+Ortopedista+Balne%C3%A1rio+Cambori%C3%BA+avalia%C3%A7%C3%B5es" target="_blank" rel="noopener" class="mk-btn mk-btn--ghost">Ver todas as avaliações no Google (4,9 · 68 avaliações)</a>
+        <a href="https://www.doctoralia.com.br/marcelo-kodja-daguer-2/ortopedista-traumatologista/balneario-camboriu" target="_blank" rel="noopener" class="mk-btn mk-btn--ghost">Ver na Doctoralia</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTATO ================= -->
+  <section class="mk-sec mk-sec--dark" id="contato">
+    <div class="mk-container mk-contato-grid">
+      <div class="mk-contato__intro">
+        <p class="mk-eyebrow mk-eyebrow--light reveal-l">Fale comigo</p>
+        <h2 class="reveal-l" style="color:#fff">Vamos cuidar do<br>seu <em>movimento</em></h2>
+        <p class="reveal-l">Atendimento particular, com hora marcada, em Balneário Camboriú e Joinville. Chame no WhatsApp para agendar a sua avaliação.</p>
+
+        <div class="mk-unidade reveal-l">
+          <div class="mk-unidade__pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div>
+            <h4>Balneário Camboriú, SC</h4>
+            <p>Av. Carlos Drummond de Andrade, 789<br>Praia Brava</p>
+          </div>
+        </div>
+        <div class="mk-unidade reveal-l">
+          <div class="mk-unidade__pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div>
+            <h4>Joinville, SC</h4>
+            <p>R. Aracaju, 1382<br>Santo Antônio</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mk-contact-card reveal-r">
+        <h3>Agende a sua avaliação</h3>
+        <p>Resposta pelo WhatsApp. Atendimento particular (não atende convênios).</p>
+        <div class="mk-contact-list">
+          <!-- Numero direto do WhatsApp (deep link com mensagem pronta) -->
+          <a href="https://api.whatsapp.com/send/?phone=5547992520256&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20o%20Dr.%20Marcelo%20Kodja." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.5-.7-2.4-1.3-3.4-3-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.5s1.1 2.9 1.2 3c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15l-1.3 4.7L7 20.4A10 10 0 1 0 12 2Z"/></svg>
+            <span>+55 47 99252-0256</span>
+          </a>
+          <!-- SUBSTITUIR/CONFIRMAR: telefone fixo -->
+          <a href="tel:+554733676217"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span>(47) 3367-6217</span></a>
+          <a href="mailto:adm@marcelokodja.com.br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>adm@marcelokodja.com.br</span></a>
+        </div>
+
+        <a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener" class="mk-btn mk-btn--wa">
+          Agendar pelo WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+
+        <div class="mk-socials">
+          <a href="https://api.whatsapp.com/send/?phone=5547992520256" target="_blank" rel="noopener" class="mk-social mk-social--wa" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.5-.7-2.4-1.3-3.4-3-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.5s1.1 2.9 1.2 3c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15l-1.3 4.7L7 20.4A10 10 0 1 0 12 2Z"/></svg></a>
+          <a href="https://www.instagram.com/drmarcelokodja/" target="_blank" rel="noopener" class="mk-social mk-social--ig" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="mk-footer">
+    <div class="mk-container">
+      <div class="mk-footer-top">
+        <div class="mk-footer__brand">
+          <a href="#hero" class="mk-brand">
+            <svg class="mk-brand__mark" viewBox="0 0 44 44" fill="none" stroke="currentColor" aria-hidden="true" style="color:var(--titanio)"><path d="M22 3 39 12.5v19L22 41 5 31.5v-19L22 3Z" stroke-width="1.4" opacity=".55"/><path d="M16 15v14M16 22h8M28 15l-6 7 6 7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="22" r="1.6" fill="var(--azul-vivo)" stroke="none"/></svg>
+            <span class="mk-brand__txt"><span class="mk-brand__name">Dr. Marcelo Kodja</span><span class="mk-brand__sub">Ortopedia · Traumatologia</span></span>
+          </a>
+          <p>Ortopedia e traumatologia com abordagem integrativa em Balneário Camboriú e Joinville. Tratamento da dor priorizando o não cirúrgico.</p>
+          <p class="mk-footer__crm">CRM 7670-SC · RQE 2621</p>
+        </div>
+        <div class="mk-footer__col">
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#areas">Áreas de atuação</a></li>
+            <li><a href="#abordagem">Abordagem</a></li>
+            <li><a href="#tratamentos">Tratamentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="mk-footer__col">
+          <h5>Atendimento</h5>
+          <ul>
+            <li><a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener">Agendar no WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/drmarcelokodja/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><p>Balneário Camboriú, SC</p></li>
+            <li><p>Joinville, SC</p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mk-footer-bottom">
+        <p>© <span data-year>2026</span> Dr. Marcelo Kodja Daguer. Todos os direitos reservados.</p>
+        <p>Responsável técnico: Dr. Marcelo Kodja Daguer · CRM 7670-SC</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= WHATSAPP FLUTUANTE ================= -->
+  <a href="https://pxa.marcelokodja.com.br/lt/whatsapp-direto" target="_blank" rel="noopener" class="mk-wa-float" aria-label="Agendar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.5-.7-2.4-1.3-3.4-3-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.5s1.1 2.9 1.2 3c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15l-1.3 4.7L7 20.4A10 10 0 1 0 12 2Z"/></svg>
+  </a>
+
+</div><!-- /#mk-site -->
+
+<script>
+/* ============================================================
+   Dr. Marcelo Kodja - interacoes (Vanilla JS, sem dependencias)
+   Escopado ao wrapper #mk-site. A prova de falhas: se algo
+   quebrar, o conteudo permanece visivel (nunca preso em opacity:0).
+   ============================================================ */
+(function () {
+  "use strict";
+  var site = document.getElementById("mk-site");
+  if (!site) return;
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Marca que o JS esta ativo: so agora o CSS pode esconder .reveal */
+  site.classList.add("is-ready");
+
+  /* ---- Ano no rodape ---- */
+  var y = site.querySelector("[data-year]");
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ---- Nav: estado ao rolar ---- */
+  var nav = site.querySelector(".mk-nav");
+  function onScroll() { if (nav) nav.classList.toggle("scrolled", window.scrollY > 40); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---- Menu mobile (drawer) ---- */
+  var burger = site.querySelector(".mk-burger");
+  var drawer = site.querySelector(".mk-drawer");
+  function setMenu(open) {
+    if (!drawer || !burger) return;
+    drawer.classList.toggle("open", open);
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+  if (burger) burger.addEventListener("click", function () { setMenu(!drawer.classList.contains("open")); });
+  if (drawer) drawer.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+
+  /* ---- Ancoras: scroll suave com offset do nav fixo ---- */
+  site.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var id = link.getAttribute("href");
+      if (!id || id.length < 2) return;
+      var target = site.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var navH = nav ? nav.offsetHeight : 0;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - navH + 1;
+      window.scrollTo({ top: top, behavior: reduce ? "auto" : "smooth" });
+    });
+  });
+
+  /* ---- Reveal on scroll (com stagger) ---- */
+  var reveals = site.querySelectorAll(".reveal, .reveal-l, .reveal-r");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var group = Array.prototype.filter.call(el.parentElement.children, function (c) {
+          return c.classList.contains("reveal") || c.classList.contains("reveal-l") || c.classList.contains("reveal-r");
+        });
+        var idx = group.indexOf(el);
+        el.style.transitionDelay = Math.min(idx, 6) * 0.08 + "s";
+        el.classList.add("in");
+        io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- Contadores ---- */
+  function runCounter(el) {
+    var target = parseFloat(el.getAttribute("data-count")) || 0;
+    var dur = 1400, start = null;
+    function tick(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(tick);
+  }
+  var counters = site.querySelectorAll("[data-count]");
+  if ("IntersectionObserver" in window && !reduce) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { runCounter(e.target); cio.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { cio.observe(el); });
+  } else {
+    counters.forEach(function (el) { el.textContent = el.getAttribute("data-count"); });
+  }
+
+  /* ---- Acordeao (formacao) ---- */
+  site.querySelectorAll(".mk-accordion__btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var panel = btn.nextElementSibling;
+      btn.classList.toggle("open");
+      if (panel) panel.classList.toggle("open");
+    });
+  });
+
+  /* ---- Link ativo conforme secao visivel ---- */
+  var sections = site.querySelectorAll("section[id]");
+  var navLinks = site.querySelectorAll(".mk-nav-links a");
+  window.addEventListener("scroll", function () {
+    var cur = "";
+    sections.forEach(function (s) { if (window.scrollY >= s.offsetTop - 160) cur = s.id; });
+    navLinks.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + cur); });
+  }, { passive: true });
+})();
+
+</script>
