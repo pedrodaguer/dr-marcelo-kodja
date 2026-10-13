@@ -315,7 +315,7 @@
 #mk-site .mk-proc:hover .mk-proc__ic svg { color: #fff; }
 #mk-site .mk-proc h3 { font-family: var(--f-display); font-size: 16px; font-weight: 700; color: var(--azul-abismo); margin-bottom: 8px; }
 #mk-site .mk-proc p { font-size: 13px; line-height: 1.6; color: var(--cinza); }
-#mk-site .mk-proc--cta { background: linear-gradient(150deg, var(--azul-marca), var(--azul-abismo)); border-color: transparent; display: flex; flex-direction: column; justify-content: center; }
+#mk-site .mk-proc--cta { background: linear-gradient(150deg, var(--azul-marca), var(--azul-abismo)); border-color: transparent; grid-column: 1 / -1; display: flex; flex-direction: column; justify-content: center; }
 #mk-site .mk-proc--cta h3, #mk-site .mk-proc--cta p { color: #fff; }
 #mk-site .mk-proc--cta p { color: rgba(220,230,238,.75); margin-bottom: 14px; }
 #mk-site .mk-proc--cta a { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--azul-eletrico); }

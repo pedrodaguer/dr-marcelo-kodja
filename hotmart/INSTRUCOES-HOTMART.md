@@ -46,7 +46,6 @@ Os **dados estruturados (JSON-LD)** de médico e endereços já vão dentro do b
 |------|----------------|-------------|
 | **WhatsApp (botões)** | Link rastreado atual `https://pxa.marcelokodja.com.br/lt/whatsapp-direto` | Confirmar se é o funil que quer manter. |
 | **WhatsApp (número direto)** | `+55 47 99252-0256` no bloco Contato e no rodapé | Confirmar o número. É o que abre a conversa com mensagem pronta. |
-| **Telefone fixo** | `(47) 3367-6217` | Confirmar / atualizar. |
 | **E-mail** | `adm@marcelokodja.com.br` | Confirmar. |
 | **Instagram** | `instagram.com/drmarcelokodja` | Confirmar. |
 | **Endereços** | Balneário Camboriú (Av. Carlos Drummond de Andrade, 789, Praia Brava) e Joinville (R. Aracaju, 1382, Santo Antônio) | Confirmar. São os mesmos da Dra. Vivian, conforme combinado. |
@@ -107,5 +106,5 @@ troque o texto, o nome e a inicial do avatar. **Use apenas avaliações reais**
 - CRM 7670-SC · RQE 2621 · 24+ anos de experiência
 - Membro da Sociedade Brasileira de Cirurgia do Joelho
 - Atendimento particular (não atende convênios)
-- WhatsApp: +55 47 99252-0256 · Fixo: (47) 3367-6217 · adm@marcelokodja.com.br
+- WhatsApp: +55 47 99252-0256 · adm@marcelokodja.com.br
 - Unidades: Balneário Camboriú (Praia Brava) e Joinville (Santo Antônio), SC
