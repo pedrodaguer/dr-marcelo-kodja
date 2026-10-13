@@ -229,7 +229,7 @@
 #mk-site .mk-stats__i { background: var(--branco); padding: 22px 16px; text-align: center; }
 #mk-site .mk-stats__i b { font-family: var(--f-display); font-size: 36px; font-weight: 700; color: var(--azul-marca); line-height: 1; }
 #mk-site .mk-stats__i b .mk-u { color: var(--azul-vivo); font-size: 22px; }
-#mk-site .mk-stats__i span { display: block; margin-top: 8px; font-family: var(--f-mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--cinza); }
+#mk-site .mk-stats__i > span { display: block; margin-top: 8px; font-family: var(--f-mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--cinza); }
 #mk-site .mk-accordion { border-top: 1px solid var(--gelo-2); margin-top: 8px; }
 #mk-site .mk-accordion__btn { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 16px 0; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--azul-abismo); }
 #mk-site .mk-accordion__btn i { width: 20px; height: 20px; border: 1px solid currentColor; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: transform .3s ease; flex-shrink: 0; font-style: normal; }
